@@ -1,4 +1,4 @@
-"""auth_backend_service URL Configuration
+"""AuthBackend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+
+from django.urls import path, re_path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    re_path(r"^health", include("health_check.urls")),
+    re_path(r"^user-auth", include("user_auth.urls")),
+    re_path(r"^service-auth", include("service_auth.urls")),
 ]

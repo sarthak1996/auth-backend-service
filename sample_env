@@ -1,0 +1,9 @@
+
+#POSTGRES CREDS (Used to store auth entities related data)
+POSTGRES_HOST=
+POSTGRES_PASSWORD=
+POSTGRES_USERNAME=
+POSTGRES_PASSWORD=
+
+#TAG that needs to be deployed
+TAG=
